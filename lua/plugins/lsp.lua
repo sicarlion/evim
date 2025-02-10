@@ -57,6 +57,7 @@ return {
             },
           },
         },
+        omnisharp = {},
       }
 
       require('mason').setup()
@@ -83,7 +84,7 @@ return {
     build = ':TSUpdate',
     main = 'nvim-treesitter.configs',
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
+      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'query', 'vim' },
       auto_install = true,
       highlight = {
         enable = true,
@@ -125,5 +126,16 @@ return {
         lua = { 'stylua' },
       },
     },
+  },
+
+  -- Flutter Exclusive
+  {
+    'nvim-flutter/flutter-tools.nvim',
+    lazy = false,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'stevearc/dressing.nvim', -- optional for vim.ui.select
+    },
+    config = true,
   },
 }

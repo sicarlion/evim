@@ -1,3 +1,5 @@
+local actions = require 'telescope.actions'
+
 return {
   {
     'nvim-telescope/telescope.nvim',
@@ -20,6 +22,13 @@ return {
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
+          },
+        },
+        defaults = {
+          mappings = {
+            i = {
+              ['<esc>'] = actions.close,
+            },
           },
         },
       }
